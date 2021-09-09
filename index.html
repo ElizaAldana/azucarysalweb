@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azúcar y Sal</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--LA BARRA DE NAV-->
+    <nav>
+        <ul class="menu">
+            <!--En vez de select poner un ul dentro del li (YA)--> 
+            <li><a><img class="nav__img" src="./images/logo2.png" alt="logo"></a></li>
+            <li class="menu__item menu__list">
+                <a href="">PRODUCTOS</a>
+                <ul class="menu__drop">
+                    <li><a href="">Salsas</a></li>
+                    <li><a href="">Cupcakes</a></li>
+                    <li><a href="">Tortas de ocasión</a></li>
+                </ul>
+            </li>
+            <li class="menu__item"><a href="">RESTAURANTE</a></li>
+            <li class="menu__item"><a href="">COLABORACIONES</a></li>
+            <li class="menu__item"><a href="">CONTACTO</a></li>
+        </ul> 
+    </nav>
+    
+    <!--MAIN(EL LANDING)-->
+    <section>
+        <main class="content">
+           <h2 class="title">Dulce y salado es lo que hay...</h2>
+           <p class="paragraph">Productos variados y deliciosos</p>
+           <!--cambiar por un a el input (YA)-->
+           <a class="btn" href="">CONTÁCTANOS</a>
+        </main>
+        <!--Las características-->
+        <div class="flexbox">
+            <div class="flexbox__carac">
+                <img src="./images/a.png">
+                <label>Ingredientes de calidad</label>
+                <p>Con la ayuda de Granja Magokoro, hemos hecho productos con ingredientes excelentes</p>
+            </div>
+            
+            <div class="flexbox__carac">
+                <img src="./images/b.png">
+                <label>Variedad de sabores</label>
+                <p>Tenemos para ti una variada selección de salsas, además de cupcakes y otras delicias reposteras</p>
+            </div>
+            
+            <div class="flexbox__carac">
+                <img src="./images/c.png">
+                <label>Cocina japonesa</label>
+                <p>Conoce nuestros sabores japoneses y nuestro restaurante TONKICHI cocina japonesa</p>
+            </div>
+        </div>
+            <!--PARTE DE LAS NEWS-->
+    <div class="news">
+        <figure class="images_news">
+            <div class="images1_news">
+                <img src="./images/sandwich.jpg">
+            </div>
+            <div class="images2_news">
+                <img src="./images/logotonkichi.jpg">
+            </div>
+        </figure>
+        <div class="titles_news">
+            <label class="titles_news1">LOS NUEVOS SANDWICHES DE TONKICHI</label>
+            <label class="titles_news1">NUESTRO RESTAURANTE</label>
+       </div>
+       <div class="text_news">
+        <p class="text_news1">Panes artesanales y una mezcla de sabores poco convencionales que seguro te encantarán, pruébalos en Tonkichi.
+        Encuentra aquí los distintos sabores disponibles en la carta del restaurante.</p>
+        <input class="btn" type="submit" placeholder="" value="VER MÁS">
+        <p class="text_news1">Nuestro restaurante de cocina japonesa, Tonkichi, es una alternativa un poco más seria y elegante. Toda una experiencia para el paladar.</p>
+        <input class="btn" type="submit" placeholder="" value="VER MÁS">
+       </div>
+    </div>
+    <!--Galery-->
+    <div class="galery">
+        <figure>
+            <img src="./images/papas.jpg" alt="papas">
+            <img src="./images/salsasss.jpg" alt="salsas">
+            <img src="./images/recetas.jpg" alt="mano con paleta">
+            <img src="./images/combinaciones.jpg" alt="banano con berenjena">
+            <img src="./images/champs.png" alt="champiñones">
+            <img src="./images/salsa.png" alt="la nueva salsa de ajonjolí">
+            <img src="./images/domis.png" alt="persona viendo tv y comiendo">
+        </figure>
+        <div class="subtitle_galery">
+            <label class="sub_galery">SALADO</label>
+            <label class="sub_galery">SALADO</label>
+            <label class="sub_galery">DULCE</label>
+            <label class="sub_galery">DULCE</label>
+        </div>
+        <div class="title_galery">
+            <a class="ti_galery" href="">PAPAS</a>
+            <a class="ti_galery" href="">SALSAS</a>
+            <a class="ti_galery" href="">RECETAS FÁCILES</a>
+            <a class="ti_galery" href="">COMBINACIONES</a>
+        </div>
+    </div>
+    </section>
+    <!--EL FOOTER-->
+    <footer>
+        <form>
+            <label>MANTENGAMOS EL CONTACTO! :)</label>
+            <div>
+                <input type="email" placeholder="Escribe aquí tu e-mail">
+                <input class="btn" type="submit" placeholder="" value="ENVIAR">
+            </div>
+            <div>
+                <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                <label for="option1">Acepto la recolección de mis datos de contacto</label>
+            </div>
+            <label>© 2016 Azúcar y Sal Cali</label>
+            <div>
+                <ul>
+                    <label>AYUDA</label>
+                    <li>¿Algún problema?</li>
+                    <li>Términos y condiciones</li>
+                    <li>Política de privacidad</li>
+                    <li>Servicio al cliente</li>
+
+                    <label>CONTACTO</label>
+                    <li>
+                        Ubicación:
+                        Cali, Valle del Cauca
+                        Colombia
+                    </li>
+                    <li>
+                        Whatsapp:
+                        3137782524
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </footer>
+</body>
+</html>
