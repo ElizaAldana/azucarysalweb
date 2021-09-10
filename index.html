@@ -12,33 +12,42 @@
 </head>
 <body>
     <!--LA BARRA DE NAV-->
-    <nav>
-        <ul class="menu">
-            <!--En vez de select poner un ul dentro del li (YA)--> 
-            <li><a><img class="nav__img" src="./images/logo2.png" alt="logo"></a></li>
-            <li class="menu__item menu__list">
-                <a href="">PRODUCTOS</a>
-                <ul class="menu__drop">
-                    <li><a href="">Salsas</a></li>
-                    <li><a href="">Cupcakes</a></li>
-                    <li><a href="">Tortas de ocasión</a></li>
-                </ul>
-            </li>
-            <li class="menu__item"><a href="">RESTAURANTE</a></li>
-            <li class="menu__item"><a href="">COLABORACIONES</a></li>
-            <li class="menu__item"><a href="">CONTACTO</a></li>
-        </ul> 
+    <nav class="menu">
+        <div class="menu__borde">
+            <img src="./images/bordenav.png">
+        </div>
+            
+        <div>
+            <a class="menu__logo" href=""><img src="./images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="">Salsas</a></li>
+                        <li><a href="">Cupcakes</a></li>
+                        <li><a href="">Tortas de ocasión</a></li>
+                    </ul>
+                </li>
+                    <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                    <li class="menu__item"><a href="">COLABORACIONES</a></li>
+                    <li class="menu__item"><a href="">CONTACTO</a></li>
+            </ul>
+        </div>
+    </div>    
     </nav>
     
     <!--MAIN(EL LANDING)-->
     <section>
         <main class="content">
-           <h2 class="title">Dulce y salado es lo que hay...</h2>
-           <p class="paragraph">Productos variados y deliciosos</p>
-           <!--cambiar por un a el input (YA)-->
-           <a class="btn" href="">CONTÁCTANOS</a>
-        </main>
-        <!--Las características-->
+            <div class="content__items-text">
+                <h2>Dulce y salado es lo que hay...</h2>
+                <p>Productos variados y deliciosos</p>
+                <a class="btn" href="">CONTÁCTANOS</a>
+            </div>
+            <img src="./images/bannerbg.jpg" alt="banner image">
+        </main> 
+
+    
         <div class="flexbox">
             <div class="flexbox__carac">
                 <img src="./images/a.png">
@@ -58,7 +67,6 @@
                 <p>Conoce nuestros sabores japoneses y nuestro restaurante TONKICHI cocina japonesa</p>
             </div>
         </div>
-            <!--PARTE DE LAS NEWS-->
     <div class="news">
         <figure class="images_news">
             <div class="images1_news">
@@ -80,7 +88,6 @@
         <input class="btn" type="submit" placeholder="" value="VER MÁS">
        </div>
     </div>
-    <!--Galery-->
     <div class="galery">
         <figure>
             <img src="./images/papas.jpg" alt="papas">
@@ -104,8 +111,8 @@
             <a class="ti_galery" href="">COMBINACIONES</a>
         </div>
     </div>
-    </section>
-    <!--EL FOOTER-->
+    </section> 
+
     <footer>
         <form>
             <label>MANTENGAMOS EL CONTACTO! :)</label>
