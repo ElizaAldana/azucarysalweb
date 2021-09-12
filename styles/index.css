@@ -27,12 +27,26 @@
 
 }
 
+h2{
+    font-family: 'Anton', sans-serif;
+    color: #4A4A4A;
+    font-size: 2.25em;
+    font-weight: 400;
+}
+
+p{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: #4A4A4A;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
 
 .menu {
     position: fixed;
     background-color: white;
     width: 100%;
-    height: 100px;
+    height: 6.25em;
     z-index: 8;
 }
 
@@ -55,7 +69,6 @@
     object-fit: cover;
     z-index: 8;
 }
-
 
 .menu__ul{
     margin-left: 20%;
@@ -186,34 +199,44 @@
 }
 .banner__background img{
     position:relative;
-    top: -100px;
+    top: -150px;
 }
 
 .caracteristics {
-    position: absolute;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-}
-
-.caracteristics__list{
+    position: relative;
     display: flex;
     justify-content: space-around;
 }
 
-.caracteristics__item1 img{
-    width: 248.97px;
-    height: 248.97px;
-    top: 1040.46px;
+.caracteristics__list{
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
 }
 
-.caracteristics__item2 img{
-    width: 248.97px;
-    height: 248.97px;
-    top: 1040.46px;
+.caracteristics__item{
+    margin: 2%;
+    padding: 1em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
-.caracteristics__item3 img{
+
+.caracteristics__item-img{
     width: 248.97px;
     height: 248.97px;
-    top: 1040.46px;
+}
+
+.caracteristics__item p{
+    text-align: center;
+}
+
+.news{
+    position:relative;
+}
+
+.images_news{
+    margin-top: 4em;
+    margin: 2em;
+    padding-top: 5em;
 }
