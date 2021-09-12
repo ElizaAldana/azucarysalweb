@@ -104,8 +104,12 @@
 
 }
 
+.content {
+    width: 1440px;
+    height: 920px;
+}
+
 .content img {
-    position: absolute;
     width: 100%;
     height: 920px;
     top: 0px;
@@ -177,13 +181,12 @@
     padding-top: 10px;
 }
 
-.caracteristics img {
+.banner__background{
     position: absolute;
-    width: 100%;
-    top: 788px;
-    bottom: 0px;
-    z-index: 1;
-    object-fit: cover;
+}
+.banner__background img{
+    position:relative;
+    top: -100px;
 }
 
 .caracteristics {
