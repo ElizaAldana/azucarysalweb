@@ -285,3 +285,34 @@ a{
     right:50px;
 }
 
+.galery {
+    height: 1505px;
+}
+
+.galery__background{
+    position: absolute;
+}
+.galery__background img{
+    position:relative;
+    top: -150px;
+}
+
+.galery__images{
+    position: relative;
+    display: flex;
+    justify-content: row;
+    top: 15em;
+    padding-top: 5em;
+}
+.galery__images-papas{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__background{
+
+}
+
+.footer__background img{
+
+}
