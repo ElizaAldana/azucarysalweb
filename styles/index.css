@@ -67,18 +67,17 @@ a{
     justify-content: center;
     margin-top: 95px;
     width: 100%;
-    z-index: 6;
+    z-index: 3;
 }
 
 .menu__logo{
-    position: fixed;
+    position:relative;
     margin-left: 5%;
     top: 0px;
     bottom: 0px;
     align-items: center;
-    z-index: 10;
-    object-fit: cover;
     z-index: 8;
+    object-fit: cover;
 }
 
 .menu__ul{
