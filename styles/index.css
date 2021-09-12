@@ -118,7 +118,7 @@
     width: 500px;
     height: 127px;
     left: 150px;
-    top: 351px;
+    top: 300px;
     text-align: center;
 
     text-transform: uppercase;
@@ -126,7 +126,9 @@
     font-family: Anton;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 64px;
+    font-size: 4em;
+    line-height: 100.7%;
+    letter-spacing: 1px;
     align-items: center;
     justify-content: center;
     z-index: 6;
@@ -136,18 +138,19 @@
     width: 500px;
     height: 39px;
     left: 150px;
-    top: 550px;
+    top: 440px;
     text-align: center;
 
     position: absolute;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
 
     color: #FFFFFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 36px;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    font-size: 2.25em;
     align-items: center;
+    line-height: 90.7%;
     justify-content: center;
     z-index: 6;
 }
@@ -155,7 +158,7 @@
 
 .content__items-text a {
     left: 300px;
-    top: 600px;
+    top: 500px;
     width: 150px;
     height: 44px;
     border-radius: 10px;
@@ -172,4 +175,42 @@
     position: absolute;
     align-items: center;
     padding-top: 10px;
+}
+
+.caracteristics img {
+    position: absolute;
+    width: 100%;
+    top: 788px;
+    bottom: 0px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.caracteristics {
+    position: absolute;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.caracteristics__list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.caracteristics__item1 img{
+    width: 248.97px;
+    height: 248.97px;
+    top: 1040.46px;
+}
+
+.caracteristics__item2 img{
+    width: 248.97px;
+    height: 248.97px;
+    top: 1040.46px;
+}
+.caracteristics__item3 img{
+    width: 248.97px;
+    height: 248.97px;
+    top: 1040.46px;
 }
