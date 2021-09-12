@@ -27,7 +27,14 @@
 
 }
 
-h2{
+h1{
+    font-family: 'Anton', sans-serif;
+    color: #4A4A4A;
+    font-size: 4em;
+    font-weight: 400;
+}
+
+h3{
     font-family: 'Anton', sans-serif;
     color: #4A4A4A;
     font-size: 2.25em;
@@ -139,7 +146,7 @@ a{
     width: 500px;
     height: 127px;
     left: 150px;
-    top: 300px;
+    top: 235px;
     text-align: center;
 
     text-transform: uppercase;
@@ -179,7 +186,7 @@ a{
 
 .content__items-text a {
     left: 300px;
-    top: 500px;
+    top: 450px;
     width: 150px;
     height: 44px;
     border-radius: 10px;
@@ -256,7 +263,7 @@ a{
     height: 552px;
 }
 
-.news__sandwich-card, .news__tonkichi-car{
+.news__sandwich-card, .news__tonkichi-card{
     border-radius:5px;
     background-color: white;
     width:704px;
@@ -267,7 +274,16 @@ a{
     margin: 5%;
 }
 
-.news__tonkichi-car p, h2, a{
+.news__sandwich-card a, .news__tonkichi-card a{
+    color: white;
+    background-color: coral;
+    padding: 10px 20px 10px 20px;
+    width: 150px;
+    height: 44px;
+    border-radius: 10px;
+}
+
+.news__tonkichi-card p, h2, a{
     margin: 5%;
 }
 
@@ -286,7 +302,7 @@ a{
 }
 
 .galery {
-    height: 1505px;
+    height: 1300px;
 }
 
 .galery__background{
@@ -310,9 +326,32 @@ a{
 }
 
 .footer__background{
-
+    position: absolute;
 }
 
 .footer__background img{
+    position:relative;
+    top: -150px;
+}
+
+.footer__banner{
+    position: relative;
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.footer__newsletter{
 
 }
+
+.footer__contact-text{
+    list-style: none;
+    font-size: 24px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 200;
+    color: #4A4A4A;
+}
+

@@ -60,19 +60,19 @@
             <div class="caracteristics">
                 <div class="caracteristics__item">
                     <img class="caracteristics__item-img" src="./images/a.png" alt="logo 1">
-                    <h2>Ingredientes de calidad</h2>
+                    <h3>Ingredientes de calidad</h3>
                     <p>Con la ayuda de Granja Magokoro, hemos hecho productos con ingredientes excelentes</p>
                 </div>
 
                 <div class="caracteristics__item">
                     <img class="caracteristics__item-img" src="./images/b.png" alt="logo 2">
-                    <h2>Variedad de sabores</h2>
+                    <h3>Variedad de sabores</h3>
                     <p>Tenemos para ti una variada selección de salsas, además de cupcakes y otras delicias reposteras
                     </p>
                 </div>
                 <div class="caracteristics__item">
                     <img class="caracteristics__item-img" src="./images/c.png" alt="logo 3">
-                    <h2>Cocina japonesa</h2>
+                    <h3>Cocina japonesa</h3>
                     <p>Conoce nuestros sabores japoneses y nuestro restaurante TONKICHI cocina japonesa</p>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="news__tonkichi">
-                    <div class="news__tonkichi-car">
+                    <div class="news__tonkichi-card">
                         <h2>NUESTRO RESTAURANTE</h2>
                         <p class="text_news1">Nuestro restaurante de cocina japonesa, Tonkichi, es una alternativa un
                             poco
@@ -116,22 +116,30 @@
                 <div class="galery__images-papas">
                     <img src="./images/papas.jpg" alt="papas">
                     <label class="sub_galery">SALADO</label>
-                    <a class="ti_galery" href="">PAPAS</a>
+                    <a class="ti_galery" href="">
+                        <h2>PAPAS</h2>
+                    </a>
                 </div>
                 <div>
                     <img src="./images/salsasss.jpg" alt="salsas">
                     <label class="sub_galery">SALADO</label>
-                    <a class="ti_galery" href="">SALSAS</a>
+                    <a class="ti_galery" href="">
+                        <h2>SALSAS</h2>
+                    </a>
                 </div>
                 <div>
                     <img src="./images/recetas.jpg" alt="mano con paleta">
                     <label class="sub_galery">DULCE</label>
-                    <a class="ti_galery" href="">RECETAS FÁCILES</a>
+                    <a class="ti_galery" href="">
+                        <h2>RECETAS FÁCILES</h2>
+                    </a>
                 </div>
                 <div>
                     <img src="./images/combinaciones.jpg" alt="banano con berenjena">
                     <label class="sub_galery">DULCE</label>
-                    <a class="ti_galery" href="">COMBINACIONES</a>
+                    <a class="ti_galery" href="">
+                        <h2>COMBINACIONES</h2>
+                    </a>
                 </div>
                 <div>
                     <img src="./images/champs.png" alt="champiñones">
@@ -149,41 +157,42 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <figure class="footer__background">
             <img src="./images/lastbg.png" alt="fondo">
         </figure>
-        <form>
-            <label>MANTENGAMOS EL CONTACTO! :)</label>
-            <div>
-                <input type="email" placeholder="Escribe aquí tu e-mail">
-                <input class="btn" type="submit" placeholder="" value="ENVIAR">
+        <form class="footer__banner">
+            <div class="footer__newsletter">
+                <h1>MANTENGAMOS EL CONTACTO! :)</h1>
+                <div>
+                    <input type="email" placeholder="Escribe aquí tu e-mail">
+                    <input class="btn" type="submit" placeholder="" value="ENVIAR">
+                </div>
+                <div>
+                    <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                    <label class="footer__contact-text" for="option1">Acepto la recolección de mis datos de contacto</label>
+                </div>
+                <label class="footer__contact-text">© 2016 Azúcar y Sal Cali</label>
             </div>
-            <div>
-                <input class="btn" type="checkbox" name="options" value="yes" id="option1">
-                <label for="option1">Acepto la recolección de mis datos de contacto</label>
-            </div>
-            <label>© 2016 Azúcar y Sal Cali</label>
-            <div>
-                <ul>
-                    <label>AYUDA</label>
-                    <li>¿Algún problema?</li>
-                    <li>Términos y condiciones</li>
-                    <li>Política de privacidad</li>
-                    <li>Servicio al cliente</li>
-
-                    <label>CONTACTO</label>
-                    <li>
-                        Ubicación:
-                        Cali, Valle del Cauca
-                        Colombia
-                    </li>
-                    <li>
-                        Whatsapp:
-                        3137782524
-                    </li>
-                </ul>
-            </div>
+            <ul class="footer__help">
+                <h3>AYUDA</h3>
+                <li class="footer__contact-text">¿Algún problema?</li>
+                <li class="footer__contact-text">Términos y condiciones</li>
+                <li class="footer__contact-text">Política de privacidad</li>
+                <li class="footer__contact-text">Servicio al cliente</li>
+            </ul>
+            <ul class="footer__contact">
+                <h3>CONTACTO</h3>
+                <li class="footer__contact-text">
+                    Ubicación:
+                    Cali, Valle del Cauca
+                    Colombia
+                </li>
+                <li class="footer__contact-text">
+                    Whatsapp:
+                    3137782524
+                </li>
+            </ul>
         </form>
     </footer>
 </body>
