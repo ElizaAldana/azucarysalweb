@@ -24,6 +24,10 @@
 
 @media all and (max-width: 550px){
 
+    .menu{
+        height: 30px;
+    }
+    
     .menu__borde {
         margin-top: 5%;
     }
@@ -74,8 +78,17 @@
     }
 
     .caracteristics__item {
-        flex-direction: row;
+        flex-direction: column;
     } 
+
+    .caracteristics__item-img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .caracteristics__item h3{
+        font-size: 10px;
+    }
 
    
 }
