@@ -5,7 +5,6 @@
 }
 
 
-
 .options {
     font-family: 'Anton', sans-serif;
 }
@@ -255,6 +254,7 @@ a {
     align-items: center;
 }
 
+
 .caracteristics__item-img {
     width: 248.97px;
     height: 248.97px;
@@ -340,6 +340,21 @@ a {
     height: 100%;
   
 }
+
+:root{
+    --swiper-theme-color: coral !important;
+}
+
+.swiper h3{
+    text-align: center;
+    background-color: #FFE24A;
+    padding: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -348,7 +363,7 @@ a {
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #AEF2EB;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -363,30 +378,14 @@ a {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+
   }
 
   .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100vmin;
     object-fit: cover;
   }
-
-/* .gallery__btn{
-    position: relative;
-    width: 40%;
-    height: 40%;
-  
-} */
-
-/* .gallery__btn a{
-    width: 91px;
-    height: 91px;
-    background-color:coral;
-    color: white;
-    text-decoration: none;
-    z-index: 6;
-} */
 
 .blog__images div{
     width: 330px ;
@@ -423,26 +422,31 @@ a {
     position: absolute;
     display: flex;
     object-fit: cover;
-    z-index: -9;
+    z-index: 1;
     width: 100%;
-    height: 115%;
+    margin-top: -239px;
+    height: 140%;
     overflow: hidden;
-    
+    background-color: #AEF2EB;
 }
+
 
 .blog__background img {
     width: 100%;
+    z-index: 0;
 }
 
 .blog__images {
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 200px;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 80px;
     display: flex;
     position: relative;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    z-index: 1;
+
 }
 
 .blog__images div {
@@ -456,13 +460,13 @@ a {
     width: 100%;
     display: flex;
     justify-content: space-around;
+
 }
 
 .footer__background {
     position: absolute;
     display: flex;
     object-fit: cover;
-    z-index: -8;
     width: 100%;
     height: 100%;
 }
