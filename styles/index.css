@@ -74,6 +74,9 @@ a {
     margin-top: 95px;
     z-index: 3;
 }
+.menu__banner {
+    margin-right: 5%;
+}
 
 .menu__logo {
     position: relative;
@@ -87,21 +90,23 @@ a {
 }
 
 .menu__ul {
-    margin-left: 20%;
-    margin-right: 50%;
+    margin-left: 250px;
+    /* margin-right: 1000px; */
+    /* margin-right: 50%; */
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    width: 70%;
     top: 51px;
     z-index: 8;
 }
 
 .menu__item {
     list-style: none;
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
 }
 
 .menu__item a {
@@ -160,7 +165,7 @@ a {
 .content__items-text {
     width: 50%;
     display: flex;
-    top: 50%;
+    top: 300px;
     flex-direction: column;
     position: absolute;
     align-items: center;
@@ -325,52 +330,83 @@ a {
     right: 50px;
 }
 
-.gallery {
+.blog {
     position: relative;
-    height: 1000px;
+    height: 100%;
   
 }
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
 
-.gallery__btn{
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* .gallery__btn{
     position: relative;
     width: 40%;
     height: 40%;
   
-}
+} */
 
-.gallery__btn a{
+/* .gallery__btn a{
     width: 91px;
     height: 91px;
     background-color:coral;
     color: white;
     text-decoration: none;
     z-index: 6;
-}
+} */
 
-.gallery__images div{
+.blog__images div{
     width: 330px ;
     display: flex;
 }
 
-.gallery__images div a {
+.blog__images div a {
     width: 60%;
     font-size: 1.25em;
     text-decoration: underline;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     color: #4A4A4A;
     margin: 0 !important;
-    padding-top: 5%;
+    padding-top: 1.5%;
 }
-.gallery__images div a h2 {
+.blog__images div a h2 {
     margin: 0 !important; 
 }
 
-.gallery__images div img {
+.blog__images div img {
     height: 100%;
     object-fit: cover;
 }
 
-.gallery__images div label {
+.blog__images div label {
     font-family: Yanone Kaffeesatz;
     font-weight: 300;
     font-size: 1.5em;
@@ -378,7 +414,7 @@ a {
     margin-top: 2%;
 }
 
-.gallery__background {
+.blog__background {
     position: absolute;
     display: flex;
     object-fit: cover;
@@ -389,17 +425,22 @@ a {
     
 }
 
-.gallery__background img {
+.blog__background img {
     width: 100%;
 }
 
-.gallery__images {
+.blog__images {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 200px;
     display: flex;
     position: relative;
-    padding-top: 18em;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.gallery__images div {
+.blog__images div {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
