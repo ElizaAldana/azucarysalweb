@@ -36,13 +36,10 @@
         height: 350px;
         margin: 5%;
     }
-    .content__items-text{
-        top: 40%;
-        width: 100%;
-    }
+ 
 }
 
-@media all and (max-width: 780px){
+@media all and (max-width: 895px){
     .menu__borde {
         display: none;
     }
@@ -79,12 +76,8 @@
         width: 100%;
     }
 
-    .content__items-text{
-        top: 40%;
-        width: 100%;
-    }
-
-    .content__items-text h2{
+    
+    /* .content__items-text h2{
         font-size: 2em;
     }
     .content__items-text p{
@@ -96,7 +89,7 @@
         height: 25.23px;
         font-size: 0.8em;
         border-radius: 4.82px;
-    }
+    } */
 
     .content img {
         height: 580px;
@@ -105,17 +98,24 @@
 
     
     .caracteristics {
-        width: 100%;
-        flex-direction: column;
+        
+            width: 100%;
+            padding-top: 90px;
+            flex-direction: column;
+        
     }
 
+    .caracteristics div {
+        padding: 0;
+        margin-top: 0%;
+    }
     .caracteristics__item {
         flex-direction: column;
     } 
 
     .caracteristics__item-img{
-        width: 90px;
-        height: 90px;
+        width: 170px;
+        height: 170px;
     }
 
     .caracteristics__item h3{
@@ -166,7 +166,7 @@
         display: flex;
         object-fit: cover;
         width: 100%;
-        height: 98vmin;
+        height: 108vmin;
     }
 
     .footer__banner {
@@ -204,6 +204,11 @@
       
     }
 
+    .caracteristics__item-img{
+        width: 90px;
+        height: 90px;
+    }
+
     .news__tonkichi {
         display: flex;
         flex-direction: column-reverse;
@@ -211,8 +216,45 @@
     }
 
     .news__sandwich-card, .news__tonkichi-card {
-        width: 300px;
-        height: 300px;
-        margin: 5%;
+        
+            width: 200px;
+            height: 224px;
+            margin: 5%;
+        
     }
+
+    .footer__background {
+        position: absolute;
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 170vmin;
+    }
+
+    .footer__banner {
+        padding: 20px;
+       
+    }
+
+    h1 {
+       
+        font-size: 1.6em;
+        font-weight: 400;
+    }
+
+
+
+    p {
+    
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+
+    h3 {
+       
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+
 }
