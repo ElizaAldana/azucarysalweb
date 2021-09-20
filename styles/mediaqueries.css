@@ -1,11 +1,10 @@
-@media all and (max-width: 1010px) {
+@media all and (max-width: 1051px) {
     .menu__banner {
         width: 100%;
     } 
     .menu__ul{
         align-content: center;
         margin-left: 30%;
-        justify-content: space-between;
         flex-wrap: wrap;
     }
     .content {
