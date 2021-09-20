@@ -275,19 +275,20 @@ a {
     justify-content: center;
     padding: 10px;
     margin: 20% 5% 5% 5%;
+    align-items: center;
 }
 
 .news__sandwich-img {
     position: relative;
-    top: -50px;
-    left: 50px;
-    width: 523px;
-    height: 552px;
+}
+
+.news__sandwich-img img {
+    width: 400px;
 }
 
 .news__sandwich-card,
 .news__tonkichi-card {
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: white;
     font-family: 'Anton';
     color: #4A4A4A;

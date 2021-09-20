@@ -14,7 +14,33 @@
     .caracteristics{ 
         width: 100%;
     }
+    .caracteristics__item-img {
+        width: 177.44px;
+        height: 177.44px;
+    }
+    p {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        color: #4A4A4A;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+    .news__sandwich-img {
+        position: relative;
+        top: -50px;
+        left: 50px;
+        width: 473px;
+        height: 496.33px;
+    }
 
+    .news__sandwich-card, .news__tonkichi-card {
+        border-radius: 10px;
+        background-color: white;
+        font-family: 'Anton';
+        color: #4A4A4A;
+        width: 700px;
+        height: 350px;
+        margin: 5%;
+    }
     .content__items-text{
         top: 40%;
         width: 100%;
