@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/style.css">
+
+</head>
+<body>
+    <!--LA BARRA DE NAV-->
+    <nav class="menu">
+        <div class="menu__borde">
+            <img src="../images/bordenav.png">
+        </div>
+        <div class="menu__banner">
+            <a href=""><img src="../images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="">Salsas</a></li>
+                        <li><a href="">Bento saludable</a></li>
+                        <li><a href="">Repostería</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                <li class="menu__item"><a href="">COLABORACIONES</a></li>
+                <li class="menu__item"><a href="">CONTACTO</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+    <div class="swiper-container swiper">
+        <h3>Conoce nuestros productos</h3>
+        <div class="swiper-wrapper">
+       
+        </div>
+       
+        <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="productSection">
+
+        <div class="filters">
+            <div>
+                <label for="categories">Filtrar por:</label>
+                <select name="categories" id="categories">
+                    <option value="">Todos los productos</option>
+                    <option value="salsa">Salsas</option>
+                    <option value="dulce">Dulce</option>
+                    <option value="magokoro">Magokoro</option>
+                    <option value="recomendado">Recomendado</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="orderBy">Ordenar:</label>
+                <select name="orderBy" id="orderBy">
+                    <option value="">Seleccione una opción</option>
+                    <option value="asc">Precio de menor a mayor</option>
+                    <option value="desc">Precio de mayor a menor</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="products" id="products"> 
+            
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+</html>
