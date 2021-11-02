@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Salsa de Jalapeño",
         price: 12000,
-        image: "../images/salsajal.jpg",
+        image: "./images/salsajal.jpg",
         isRecommended: true,
         type: "salsa",
     },
@@ -11,7 +11,7 @@ const products = [
         id: 2,
         name: "Cupcakes",
         price: 25000,
-        image: "../images/c.jpg",
+        image: "./images/c.jpg",
         isRecommended: false,
         type: "dulce",
     },
@@ -19,7 +19,7 @@ const products = [
         id: 3,
         name: "Salsa de Perejil",
         price: 12000,
-        image: "../images/salsape.jpg",
+        image: "./images/salsape.jpg",
         isRecommended: false,
         type: "salsa",
     },
@@ -27,7 +27,7 @@ const products = [
         id: 4,
         name: "Pasteles",
         price: 60000,
-        image: "../images/tp.jpg",
+        image: "./images/tp.jpg",
         isRecommended: false,
         type: "dulce",
     },
@@ -35,7 +35,7 @@ const products = [
         id: 5,
         name: "Galletas",
         price: 15000,
-        image: "../images/ga.jpg",
+        image: "./images/ga.jpg",
         isRecommended: true,
         type: "dulce",
 
@@ -44,7 +44,7 @@ const products = [
         id: 6,
         name: "Bentos infantiles",
         price: 15000,
-        image: "../images/b.jpg",
+        image: "./images/b.jpg",
         isRecommended: false,
         type: "magokoro",
 
@@ -53,7 +53,7 @@ const products = [
         id: 7,
         name: "Salsa de Ajonjolí",
         price: 12000,
-        image: "../images/salsaaj.jpg",
+        image: "./images/salsaaj.jpg",
         isRecommended: true,
         type: "salsa",
 
@@ -62,7 +62,7 @@ const products = [
         id: 8,
         name: "Ramen",
         price: 20000,
-        image: "../images/ra.jpg",
+        image: "./images/ra.jpg",
         isRecommended: false,
         type: "magokoro",
 
@@ -71,7 +71,7 @@ const products = [
         id: 9,
         name: "Salsa de Albahaca",
         price: 12000,
-        image: "../images/salsaal.jpg",
+        image: "./images/salsaal.jpg",
         isRecommended: false,
         type: "salsa",
 
@@ -79,11 +79,7 @@ const products = [
 ];
 
 // Elementos que añadí a mi carrito
-const cart = [
-    {
-        id: 2,
-    },
-];
+const cart = [];
 
 // Añadir cada producto a un elemento contenedor
 const productsSection = document.getElementById("products");
@@ -121,13 +117,16 @@ const productTemplate = (item) => {
 
     // Añadir el HTML a nuestro elemento product.
     product.innerHTML = `
-    <img src="${item.image}" alt="${item.name}" class="product__image">
-    <div class="product__description">
-        ${tagHtml}
-        <h3 class="product__price">$ ${item.price}</h3>
-        <h2 class="product__name">${item.name}</h2>
-        ${buttonHtml}
-    </div>
+   
+        <div class="product__description">
+            ${tagHtml}
+            <h3 class="product__price">$ ${item.price}</h3>
+            <h2 class="product__name">${item.name}</h2>
+            ${buttonHtml}
+        </div>
+        
+        <img src="${item.image}" alt="${item.name}" class="product__image">
+    
     `;
 
     // Agregar cada producto a nuestro contenedor

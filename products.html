@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,21 @@
     <title>Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/sass/style.css">
 
 </head>
+
 <body>
     <!--LA BARRA DE NAV-->
     <nav class="menu">
         <div class="menu__borde">
-            <img src="../images/bordenav.png">
+            <img src="./images/bordenav.png">
         </div>
         <div class="menu__banner">
-            <a href=""><img src="../images/logo2.png" alt="logo"></a>
+            <a href=""><img src="./images/logo2.png" alt="logo"></a>
             <ul class="menu__ul">
                 <li class="menu__item menu__list">
                     <a href="">PRODUCTOS</a>
@@ -36,17 +39,32 @@
         </div>
         </div>
     </nav>
-    
-    <div class="swiper-container swiper">
-        <h3>Conoce nuestros productos</h3>
-        <div class="swiper-wrapper">
-       
-        </div>
-       
-        <div class="swiper-pagination"></div>
-        </div>
 
-        <section class="productSection">
+    <div class="swiper-container swiper">
+        <h3>Nuestras salsas</h3>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./images/4salsas.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/ajonjolí.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/albahaca.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/perejil.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/jalapeño.jpg">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <section class="productSection">
 
         <div class="filters">
             <div>
@@ -69,12 +87,73 @@
                 </select>
             </div>
         </div>
-        
-        <div class="products" id="products"> 
-            
+
+        <div class="products" id="products">
+
         </div>
     </section>
 
+    <footer class="footer">
+        <figure class="footer__background">
+            <img src="./images/lastbg.png" alt="fondo">
+        </figure>
+        <form class="footer__banner">
+            <div class="footer__newsletter">
+                <h1>MANTENGAMOS EL CONTACTO:)</h1>
+                <div>
+                    <input type="email" placeholder="Escribe aquí tu e-mail">
+                    <input class="btn" type="submit" placeholder="" value="ENVIAR">
+                </div>
+                <div>
+                    <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                    <label class="footer__contact-text" for="option1">Acepto la recolección de mis datos de
+                        contacto</label>
+                </div>
+                <label class="footer__contact-text">© 2016 Azúcar y Sal Cali</label>
+            </div>
+            <ul class="footer__help">
+                <h3>AYUDA</h3>
+                <li class="footer__contact-text"><a href="">¿Algún problema?</a></li>
+                <li class="footer__contact-text"><a href="">Términos y condiciones</a></li>
+                <li class="footer__contact-text"><a href="">Política de privacidad</a></li>
+                <li class="footer__contact-text"><a href="">Servicio al cliente</a></li>
+            </ul>
+            <ul class="footer__contact">
+                <h3>CONTACTO</h3>
+                <li class="footer__contact-text">
+                    Ubicación:
+                    Cali, Valle del Cauca
+                    Colombia
+                </li>
+                <li class="footer__contact-text">
+                    Whatsapp:
+                    3137782524
+                </li>
+            </ul>
+        </form>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".swiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script src="./js/app.js"></script>
 </body>
+
 </html>

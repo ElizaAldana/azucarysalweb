@@ -3,7 +3,8 @@
     box-sizing: border-box;
     margin: 0;
 }
-.body{
+
+body{
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
@@ -12,26 +13,63 @@ $white: #FFFFFF;
 $pink: #EBAAAE;
 $blue: #59D9CC;
 $orange: #FF8741;
+$yellow: #FFE24A;
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+:root{
+    --swiper-theme-color: $orange !important;
 }
 
-.productSection {
-    background-color: $pink;
-    margin-top: 10px;
+.swiper{
+    & h3{
+        text-align: center;
+        border-radius: 40px;
+        background-color: #59D9CC;
+        padding: 8px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &-container{
+        width: 100%;
+        height: 100%;
+    }
+
+    &-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #AEF2EB;
+    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        & img{
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
 }
+
+
 
 .filters {
     background-color: $blue;
+    margin-top: 200px;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $black;
 }
-
 
 .menu {
     position: fixed;
@@ -83,7 +121,7 @@ $orange: #FF8741;
             font-family: 'Yanone Kaffeesatz', sans-serif;
             font-style: normal;
             font-size: 1.5em;
-            color: #59D9CC;
+            color: $blue;
         }
     }
     &__drop {
@@ -107,55 +145,121 @@ $orange: #FF8741;
     }
 }
 
+.productSection {
+    background-color: $pink;
+    margin-top: 10px;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .product {
     display: block;
-    width: 629px;
-    height: 629px;
+    width: 33%;
     text-decoration: none;
+    position: relative;
+    display: flex;    
+    flex-direction: column;
+
+    &__description{
+        position: absolute;
+        bottom: 10px;
+        margin: 0px;
+        width: 80%;
+    }
+
+    &__tag{
+        background-color: $yellow;
+        color: $white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+    }
 
     &__image{
       width: 100%; 
       object-fit: contain;
     }
 
-    &__name{
-        color: $black;
-        position: absolute;   
-        padding: 20px;
- 
-    }
-
-    &__tag{
-        background-color: $blue;
-        color: $black;
-        padding: 5px 10px;
-        font-size: .9em;
-        position: absolute;
-        border-radius: 10px;
-
-    }
-
     &__price {
-        color: $black;
-        position: absolute;
-
+        background-color: $pink;
+        color: $white;
+        text-align: left;
+        margin: 5px;
+        padding: 6px;
+        text-align: left;
+        border-radius: 10px;
+        text-shadow: 4px 3px 4px rgba(63, 63, 63, 0.5);
     }
 
-    
+    &__name{
+        background-color: $pink;
+        color: $white;
+        margin: 5px;
+        padding: 10px;
+        text-align: left;
+        border-radius: 10px;
+        text-shadow: 4px 3px 4px rgba(63, 63, 63, 0.5);
+    }
+
+
     &__car {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
         background-color: $orange;
         color: $white;
         border: none;
         padding: 10px;
+        margin: 10px;
         border-radius: 10px;
-        display: flex;
-        align-items: center;
-        position: absolute;
-
+        text-align: center;
+        
+        
+      
         &:disabled{
             background-color: #FFBF9A;
             color: rgba(255, 255, 255, 0.6);;
         }
     }
+    
 
 }
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #EBAAAE;
+    color: $black;
+
+    &__background {
+        position: absolute;
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 95vmin;
+    }
+
+    &__background img {
+        width:100%
+    }
+
+    &__banner {
+        position: relative;
+        margin: 20% 5% 5% 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__contact-text {
+        margin-top: 2%;
+        list-style: none;
+        font-size: 1.5em;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight: 200;
+        color: $black;
+    }
+}
+
