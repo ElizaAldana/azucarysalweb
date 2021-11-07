@@ -109,7 +109,7 @@ body {
 }
 
 .menu__ul {
-  margin-left: 290px;
+  margin-left: 25%;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +239,7 @@ body {
 
 .product__car {
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: large;
   background-color: #FF8741;
   color: #FFFFFF;
   border: none;
@@ -289,9 +290,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .footer__contact-text {

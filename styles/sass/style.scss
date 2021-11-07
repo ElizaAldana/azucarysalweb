@@ -101,7 +101,7 @@ $yellow: #FFE24A;
         object-fit: cover;
     }
     &__ul{
-        margin-left: 290px;
+        margin-left: 25%;
         position: absolute;
         display: flex;
         flex-direction: row;
@@ -123,6 +123,7 @@ $yellow: #FFE24A;
             font-size: 1.5em;
             color: $blue;
         }
+    
     }
     &__drop {
         position: relative;
@@ -144,6 +145,7 @@ $yellow: #FFE24A;
         position: absolute;
     }
 }
+
 
 .productSection {
     background-color: $pink;
@@ -207,6 +209,7 @@ $yellow: #FFE24A;
 
     &__car {
         font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: large;
         background-color: $orange;
         color: $white;
         border: none;
@@ -230,7 +233,7 @@ $yellow: #FFE24A;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #EBAAAE;
+    background-color: $pink;
     color: $black;
 
     &__background {
@@ -250,7 +253,7 @@ $yellow: #FFE24A;
         margin: 20% 5% 5% 5%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     &__contact-text {
