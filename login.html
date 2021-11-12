@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./styles/sass/style.css">
 </head>
 <body>
     <form id="register" class="auth">
@@ -17,13 +18,15 @@
         <input type="submit" value="Registrarme">
     </form>
 
-    <form>
+    <form id="ingresar" class="auth">
         <h1>Bienvenido! :D</h1>
         <input type="email" placeholder="Correo electrónico" name="email">
         <input type="password" placeholder="Contraseña" name="password">
         <input type="submit" value="Iniciar Sesión">
     </form>
 
-    <script type="module" src="./"></script>
+    <button class="auth" id="logOut">Cerrar sesión</button>
+
+    <script type="module" src="./js/auth.js"></script>
 </body>
 </html>

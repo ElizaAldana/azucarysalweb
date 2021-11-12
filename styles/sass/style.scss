@@ -19,6 +19,23 @@ $yellow: #FFE24A;
     --swiper-theme-color: $orange !important;
 }
 
+//auths
+.auth{
+    &.hidden{
+        display: none;
+    }
+    
+}
+
+#logOut{
+    display: none;
+    &.visible{
+        display:block; 
+    }
+}
+
+
+
 .swiper{
     & h3{
         text-align: center;

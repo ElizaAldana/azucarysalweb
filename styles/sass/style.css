@@ -13,6 +13,18 @@ body {
   --swiper-theme-color: $orange !important;
 }
 
+.auth.hidden {
+  display: none;
+}
+
+#logOut {
+  display: none;
+}
+
+#logOut.visible {
+  display: block;
+}
+
 .swiper h3 {
   text-align: center;
   border-radius: 40px;
