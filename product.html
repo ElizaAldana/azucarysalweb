@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/sass/style.css">
+
 </head>
 <body>
  <!--LA BARRA DE NAV-->
@@ -13,7 +19,7 @@
         <img src="./images/bordenav.png">
     </div>
     <div class="menu__banner">
-        <a href=""><img src="./images/logo2.png" alt="logo"></a>
+        <a href="http://127.0.0.1:5500/index.html"><img src="./images/logo2.png" alt="logo"></a>
         <ul class="menu__ul">
             <li class="menu__item menu__list">
                 <a href="">PRODUCTOS</a>
@@ -26,21 +32,27 @@
             <li class="menu__item"><a href="">RESTAURANTE</a></li>
             <li class="menu__item"><a href="">COLABORACIONES</a></li>
             <li class="menu__item"><a href="">CONTACTO</a></li>
+            <li class="menu__item"><a href="">INGRESAR</a></li>
+            <li class="menu__item"><a href=""><img src="./images/Buy.png" alt="carrito logo"></a></li>
         </ul>
     </div>
     </div>
 </nav>
 
-    <div class="product">
-        <div class="product__image">
+    <div class="product__items">
+        <div class="product__images">
             <img src="" alt="" class="product__mainImage" id="productImage">
         </div>
-        <div class="product__description">
-            <h1 class="product__name" id="productName">Nombre</h1>
+
+        <div class="product__descriptionMini">
+
+            <h1 class="product__names" id="productName">Nombre</h1>
             <p class="product__paragraph" id="productDescription"></p>
+            <div class="rectangle"></div>
+
             <h3 class="product__sirve" >¿Qué, cómo, cuando?</h3>
             <p class="product__para" id="productDesc"></p>
-            <h3 class="product__price" id="productPrice"></h3>
+            <h3 class="product__prices" id="productPrice"></h3>
             <button class="product__addToCar">Añadir al carrito</button>
         </div>
 
