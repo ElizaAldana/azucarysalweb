@@ -15,9 +15,7 @@ $blue: #59D9CC;
 $orange: #FF8741;
 $yellow: #FFE24A;
 
-:root{
-    --swiper-theme-color: $orange !important;
-}
+
 
 //auths
 .auth{
@@ -36,56 +34,63 @@ $yellow: #FFE24A;
 
 
 
-.swiper{
-    & h3{
-        text-align: center;
-        border-radius: 40px;
-        background-color: #59D9CC;
-        padding: 8px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    &-container{
-        width: 100%;
-        height: 100%;
-    }
-
-    &-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #AEF2EB;
-    
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        & img{
-            display: block;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
+:root{
+    --swiper-theme-color: $orange !important;
 }
+
+.swiper h1{
+    text-align: center;
+    border-radius: 40px;
+    background-color: $blue;
+    padding: 8px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    height: 890px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    padding-top: 2%;
+  }
 
 
 
 .filters {
     background-color: $blue;
-    margin-top: 200px;
-    padding: 20px;
+    margin-top: -1%;    
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $black;
+    font-size: 2em;
 }
 
 .menu {
@@ -171,7 +176,8 @@ $yellow: #FFE24A;
 .products{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .product {
@@ -246,42 +252,7 @@ $yellow: #FFE24A;
 
 }
 
-.footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: $blue;
-    color: $black;
 
-    &__background {
-        position: absolute;
-        display: flex;
-        object-fit: cover;
-        width: 100%;
-        height: 95vmin;
-    }
-
-    &__background img {
-        width:100%
-    }
-
-    &__banner {
-        position: relative;
-        margin: 20% 5% 5% 5%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    &__contact-text {
-        margin-top: 2%;
-        list-style: none;
-        font-size: 1.5em;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-weight: 200;
-        color: $black;
-    }
-}
 
 .rectangle {
     
@@ -308,8 +279,6 @@ $yellow: #FFE24A;
         justify-content: space-around;
 
     }
-
-
     
     &__mainImage {
         width: 70%;
@@ -349,6 +318,216 @@ $yellow: #FFE24A;
         font-size: 3em;
 
     }
+
+    &__addToCar {
+        background-color: $orange;
+        color: $white;
+        padding: 12px 25px;
+        border-radius: 8px;
+    }
     
 }
 
+.register {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $blue;
+    
+
+    #register__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+        & h1 {
+            color: $black;
+            padding: 10px;
+            font-size: 3em;
+        }
+
+        & input[type=text] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=password] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=email] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=submit]{
+            font-size: 1.8em;
+            background-color: $orange;
+            color: $white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+    }
+
+    &__imagen {
+        width: 60%;
+        margin: 0;
+    }
+}
+
+.ingresar {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $blue;
+    
+
+    #ingresar__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+        & h1 {
+            color: $black;
+            padding: 10px;
+            font-size: 3em;
+        }
+
+        & input[type=text] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=password] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=email] {
+            background-color: $blue;
+            font-size: 1.5em;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & input[type=submit]{
+            font-size: 1.8em;
+            background-color: $orange;
+            color: $white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+
+          & a {
+              font-size: 1.5em;
+              padding: 10px;
+          }
+    }
+
+    &__imagen {
+        width: 60%;
+        margin: 0;
+    }
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: $blue;
+    color: $black;
+
+    &__background {
+        position: absolute;
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 95vmin;
+    }
+
+    &__background img {
+        width:100%
+    }
+
+    &__banner {
+        position: relative;
+        margin: 20% 5% 5% 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__contact-text {
+        margin-top: 2%;
+        list-style: none;
+        font-size: 1.5em;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight: 200;
+        color: $black;
+    }
+}

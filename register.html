@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,20 +13,92 @@
     <link rel="stylesheet" href="./styles/sass/style.css">
 
 </head>
-<body>
 
-    <div class="register__imagen"><img src="./images/jim.png"></div>
-    <form id="register" class="auth">
-        <h1>Regístrate :D</h1>
-        <input type="text" placeholder="Nombre completo" name="name">
-        <input type="email" placeholder="Correo electrónico" name="email">
-        <input type="password" placeholder="Contraseña" name="password">
-        <input type="text" placeholder="Ciudad" name="city">
-        <input type="text" placeholder="Dirección" name="adress">
-        <input type="submit" value="Registrarme">
-    </form>
-    
+<body>
+    <!--LA BARRA DE NAV-->
+    <nav class="menu">
+        <div class="menu__borde">
+            <img src="./images/bordenav.png">
+        </div>
+        <div class="menu__banner">
+            <a href="./index.html"><img src="./images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="./products.html">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="./products.html?type=salsa#productSection">Salsas</a></li>
+                        <li><a href="./products.html?type=isRecommended#productSection">Recomendados</a></li>
+                        <li><a href="./products.html?type=dulce#productSection">Repostería</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                <li class="menu__item"><a href="">COLABORACIONES</a></li>
+                <li class="menu__item"><a href="">CONTACTO</a></li>
+                <li class="menu__item"><a href="./login.html">INGRESAR</a></li>
+                <li class="menu__item"><a href=""><img src="./images/Buy.png" alt="carrito logo"></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+
+    <div class="register">
+        <div class="register__imagen"><img src="./images/jim.png"></div>
+        <form id="register__form" class="auth">
+            <h1>Regístrate :D</h1>
+            <input type="text" placeholder="Nombre completo" name="name">
+            <input type="email" placeholder="Correo electrónico" name="email">
+            <input type="password" placeholder="Contraseña" name="password">
+            <input type="text" placeholder="Ciudad" name="city">
+            <input type="text" placeholder="Dirección" name="adress">
+            <input type="submit" value="Registrarme">
+        </form>
+    </div>
+
+
+
+    <footer class="footer">
+        <figure class="footer__background">
+            <img src="./images/lastbg.png" alt="fondo">
+        </figure>
+        <form class="footer__banner">
+            <div class="footer__newsletter">
+                <h1>MANTENGAMOS EL CONTACTO:)</h1>
+                <div>
+                    <input type="email" placeholder="Escribe aquí tu e-mail">
+                    <input class="btn" type="submit" placeholder="" value="ENVIAR">
+                </div>
+                <div>
+                    <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                    <label class="footer__contact-text" for="option1">Acepto la recolección de mis datos de
+                        contacto</label>
+                </div>
+                <label class="footer__contact-text">© 2016 Azúcar y Sal Cali</label>
+            </div>
+            <ul class="footer__help">
+                <h3>AYUDA</h3>
+                <li class="footer__contact-text"><a href="">¿Algún problema?</a></li>
+                <li class="footer__contact-text"><a href="">Términos y condiciones</a></li>
+                <li class="footer__contact-text"><a href="">Política de privacidad</a></li>
+                <li class="footer__contact-text"><a href="">Servicio al cliente</a></li>
+            </ul>
+            <ul class="footer__contact">
+                <h3>CONTACTO</h3>
+                <li class="footer__contact-text">
+                    Ubicación:
+                    Cali, Valle del Cauca
+                    Colombia
+                </li>
+                <li class="footer__contact-text">
+                    Whatsapp:
+                    3137782524
+                </li>
+            </ul>
+        </form>
+    </footer>
+
     <script type="module" src="./js/auth.js"></script>
 
 </body>
+
 </html>

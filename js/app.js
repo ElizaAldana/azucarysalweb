@@ -118,10 +118,22 @@ orderBySelect.addEventListener("change", e => {
 });
 
 
+const getFilteredProduct = () => {
+    const url = window.location.search;
+    const searchParams = new URLSearchParams(url);
+
+    return searchParams.get("type") || null;
+}
 
 // Recorro cada uno de los productos que tengo en mi arreglo
-products.forEach(product => {
-    // Llamo la funcion productTemplate para cada product.
-    productTemplate(product);
-});
+if (getFilteredProduct()) {
+    const filteredProductsByCategory = products.filter((product) => product.type === getFilteredProduct());
+    filteredProductsByCategory.forEach(product => {
+        // Llamo la funcion productTemplate para cada product.
+        productTemplate(product);
+    });
+}
+
+
+
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,44 +12,48 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/sass/style.css">
 </head>
+
 <body>
     <!--LA BARRA DE NAV-->
- <nav class="menu">
-    <div class="menu__borde">
-        <img src="./images/bordenav.png">
-    </div>
-    <div class="menu__banner">
-        <a href="http://127.0.0.1:5500/index.html"><img src="./images/logo2.png" alt="logo"></a>
-        <ul class="menu__ul">
-            <li class="menu__item menu__list">
-                <a href="">PRODUCTOS</a>
-                <ul class="menu__drop">
-                    <li><a href="">Salsas</a></li>
-                    <li><a href="">Bento saludable</a></li>
-                    <li><a href="">Repostería</a></li>
-                </ul>
-            </li>
-            <li class="menu__item"><a href="">RESTAURANTE</a></li>
-            <li class="menu__item"><a href="">COLABORACIONES</a></li>
-            <li class="menu__item"><a href="">CONTACTO</a></li>
-            <li class="menu__item"><a href="http://127.0.0.1:5500/login.html">INGRESAR</a></li>
-            <li class="menu__item"><a href=""><img src="./images/Buy.png" alt="carrito logo"></a></li>
-        </ul>
-    </div>
-    </div>
-</nav>
+    <nav class="menu">
+        <div class="menu__borde">
+            <img src="./images/bordenav.png">
+        </div>
+        <div class="menu__banner">
+            <a href="./index.html"><img src="./images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="./products.html">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="./products.html?type=salsa#productSection">Salsas</a></li>
+                        <li><a href="./products.html?type=isRecommended#productSection">Recomendados</a></li>
+                        <li><a href="./products.html?type=dulce#productSection">Repostería</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                <li class="menu__item"><a href="">COLABORACIONES</a></li>
+                <li class="menu__item"><a href="">CONTACTO</a></li>
+                <li class="menu__item"><a href="./login.html">INGRESAR</a></li>
+                <li class="menu__item"><a href=""><img src="./images/Buy.png" alt="carrito logo"></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
 
+
+    <div class="ingresar">
+        <div class="ingresar__imagen"><img src="./images/nam.png"></div>
+        <form id="ingresar__form" class="auth">
+            <h1>Bienvenido de nuevo :D</h1>
+            <input type="email" placeholder="Correo electrónico" name="email">
+            <input type="password" placeholder="Contraseña" name="password">
+            <input type="submit" value="Iniciar Sesión">
+            <a href="./register.html">¿No tienes una cuenta? Regístrate c:</a>
+        </form>
     
-    <div class="ingresar__imagen"><img src="./images/nam.png"></div>
-    <form id="ingresar" class="auth">
-        <h1>Bienvenido! :D</h1>
-        <input type="email" placeholder="Correo electrónico" name="email">
-        <input type="password" placeholder="Contraseña" name="password">
-        <input type="submit" value="Iniciar Sesión">
-        <a href="http://127.0.0.1:5500/register.html">¿No tienes una cuenta? Regístrate c:</a>
-    </form>
-
-    <button class="auth" id="logOut">Cerrar sesión</button>
+        <button class="auth" id="logOut">Cerrar sesión</button>
+    </div>
+    
 
     <footer class="footer">
         <figure class="footer__background">
@@ -89,6 +94,9 @@
             </ul>
         </form>
     </footer>
+
     <script type="module" src="./js/auth.js"></script>
+
 </body>
+
 </html>
