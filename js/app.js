@@ -1,3 +1,15 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(app);
+
+let products = [];
+let userLogged = null;
+let cart = [];
+
 
 // Elementos que añadí a mi carrito
 const cart = [];

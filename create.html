@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add product</title>
+    <link rel="stylesheet" href="./styles/sass/style.css">
+</head>
+<body>
+    <form id="createProduct">
+        <h1>Añade un nuevo producto</h1>
+        <input type="text" name="name" placeholder="Nombre del producto">
+        <input type="number" name="price" placeholder="Precio del producto">
+
+        <textarea name="description"></textarea>
+
+        <div class="images">
+            <div class="images__input">
+                <label for="name">Fotografía principal</label>
+                <input type="file" accept="png.jpg" name="image" id="mainImage">
+            </div>
+            <img src="" alt="" id="preview">
+        </div>
+
+        <label for="type">Categoría del producto</label>
+        <select name="type">
+            <option value="salsa"></option>
+            <option value="dulce"></option>
+            <option value="magokoro"></option>
+        </select>
+    </form>
+</body>
+</html>

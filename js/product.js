@@ -1,3 +1,26 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getFirestore, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const getProduct = async () => {
+    const url = window.location.search;
+    const searchParams = new URLSearchParams(url);
+    const productId = searchParams.get("id");
+
+    const docRef = doc(db, "products", productId);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+
+    productSection.classList.add("loaded");
+    spinner.classList.add("loaded");
+
+    loadProductInfo(data);
+
+}
+
+
 const url = window.location.search;
 const searchParams = new URLSearchParams(url);
 

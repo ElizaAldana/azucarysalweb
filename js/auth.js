@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCmZzvDPBNiYr_9V2lyzqFfzwPRzWeHERo",
@@ -13,12 +14,12 @@ const firebaseConfig = {
 
 //Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const auth = getAuth();
-
-
-
 const registerForm = document.getElementById("register");
 const loginForm = document.getElementById("ingresar");
+const logOutButton = document.getElementById("logout");
+
 
 const createUser = async (email, password) => {
     try {
@@ -47,17 +48,29 @@ registerForm.addEventListener("submit", e => {
     }
 });
 
+const getUserInfo = async(userId) => {
+    try{
+        const docRef = doc(db, "users",userId);
+        const docSnap = await getDoc(docRef);
+        return docSnap.data();
+    } catch (e) {
+
+    }
+    
+}
+
 const login = async (email, password) => {
     try {
-        const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log(user);
+        const {user} = await signInWithEmailAndPassword(auth, email, password);
+        const userInfo = await getUserInfo(user.uid);
+        console.log(`Bienvenido ${userInfo.name}`);
     } catch (e) {
         console.log(e.code);
         if(e.code === "auth/user-not-found"){
-            alert("Pon correo real");
+            alert("Este usuario no está registrado");
         }
         if(e.code === "auth/wrong-password"){
-            alert("Pon contraseña real");
+            alert("La contraseña no es la correcta");
         }
     }
 }
@@ -74,6 +87,8 @@ loginForm.addEventListener("submit", e => {
     }
 });
 
+
+
 const logOut = async () => {
     try {
         await signOut(auth);
@@ -83,7 +98,6 @@ const logOut = async () => {
 }
 
 
-const logOutButton = document.getElementById("logOut");
 
 logOutButton.addEventListener("click", () =>{
     logOut();

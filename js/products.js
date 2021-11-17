@@ -1,3 +1,5 @@
+import { getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+
 const products = [
     {
         id: 1,
@@ -104,3 +106,7 @@ const products = [
 
     }
 ];
+
+products.forEach((product) => {
+    await setDoc(doc(db, "products", `01289FB321A54F2${product.id}`), product);
+});
