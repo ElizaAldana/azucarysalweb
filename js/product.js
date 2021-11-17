@@ -26,6 +26,10 @@ const searchParams = new URLSearchParams(url);
 
 const productId = searchParams.get("id");
 const product = products.find(product => product.id == productId);
+
+//const
+const productSection = document.getElementById("product");
+const spinner = document.getElementById("spinner");
 const productImage = document.getElementById("productImage");
 const productName = document.getElementById("productName");
 const productDescription = document.getElementById("productDescription");

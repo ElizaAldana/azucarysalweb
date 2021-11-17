@@ -16,14 +16,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
-const registerForm = document.getElementById("register");
-const loginForm = document.getElementById("ingresar");
+const registerForm = document.getElementById("register__form");
+const loginForm = document.getElementById("ingresar__form");
 const logOutButton = document.getElementById("logout");
 
 
-const createUser = async (email, password) => {
+const createUser = async (email, password, userFields) => {
     try {
-        await createUserWithEmailAndPassword(auth, email, password)
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, "users", user.uid), userFields);
+
     } catch (e) {
         if (e.code === "auth/email-already-in-use") {
             alert("Ups...el correo que ingresaste ya está en uso");
@@ -34,23 +36,10 @@ const createUser = async (email, password) => {
     }
 }
 
-registerForm.addEventListener("submit", e => {
-    e.preventDefault();
-    e.preventDefault();
-    const name = registerForm.name.value;
-    const email = registerForm.email.value;
-    const password = registerForm.password.value;
-
-    if (email && password) {
-        createUser(email, password);
-    } else {
-        alert();
-    }
-});
 
 const getUserInfo = async(userId) => {
     try{
-        const docRef = doc(db, "users",userId);
+        const docRef = doc(db, "users", userId);
         const docSnap = await getDoc(docRef);
         return docSnap.data();
     } catch (e) {
@@ -61,11 +50,19 @@ const getUserInfo = async(userId) => {
 
 const login = async (email, password) => {
     try {
-        const {user} = await signInWithEmailAndPassword(auth, email, password);
+        const { user } = await signInWithEmailAndPassword(auth, email, password);
+        console.log(user);
         const userInfo = await getUserInfo(user.uid);
+
+        if (userInfo.isAdmin) {
+            window.location = "../create.html";
+        } else {
+            window.location = "../products.html";
+        }
+
         console.log(`Bienvenido ${userInfo.name}`);
     } catch (e) {
-        console.log(e.code);
+        console.log(e);
         if(e.code === "auth/user-not-found"){
             alert("Este usuario no está registrado");
         }
@@ -74,19 +71,6 @@ const login = async (email, password) => {
         }
     }
 }
-
-loginForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const email = loginForm.email.value;
-    const password = loginForm.password.value;
-
-    if (email && password) {
-        login(email, password);
-    } else {
-        console.log("Completa todos los datos");
-    }
-});
-
 
 
 const logOut = async () => {
@@ -97,18 +81,56 @@ const logOut = async () => {
     }
 }
 
+if (logOutButton) {
+    logOutButton.addEventListener("click", () =>{
+        logOut();
+    });
+}
 
+if (loginForm) {
+    loginForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const email = loginForm.email.value;
+        const password = loginForm.password.value;
 
-logOutButton.addEventListener("click", () =>{
-    logOut();
-} )
+        if (email && password) {
+            login(email, password);
+        } else {
+            console.log("Completa todos los datos");
+        }
+    });
+}
+
+if (registerForm) {
+    registerForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const name = registerForm.name.value;
+        const email = registerForm.email.value;
+        const password = registerForm.password.value;
+        const city = registerForm.city.value;
+        const address = registerForm.address.value;
+
+        if (email && password) {
+            createUser(email, password, {
+                name,
+                email,
+                city,
+                address,
+                isAdmin: false,
+            });
+        } else {
+            alert();
+        }
+    });
+}
+
 
 onAuthStateChanged(auth, (user) => {
-    if (user) {
-        loginForm.classList.add("hidden");
-        logOutButton.classList.add("visible");
-    } else {
-        loginForm.classList.remove("hidden");
-        logOutButton.classList.remove("visible");
-    }
+    // if (user) {
+    //     loginForm.classList.add("hidden");
+    //     logOutButton.classList.add("visible");
+    // } else {
+    //     loginForm.classList.remove("hidden");
+    //     logOutButton.classList.remove("visible");
+    // }
   });

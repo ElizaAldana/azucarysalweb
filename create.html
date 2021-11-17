@@ -18,11 +18,12 @@
         <div class="images">
             <div class="images__input">
                 <label for="name">Fotografía principal</label>
-                <input type="file" accept="png.jpg" name="image" id="mainImage">
+                <input type="file" accept="png,.jpg" name="image" id="mainImage">
             </div>
             <img src="" alt="" id="preview">
         </div>
 
+        <!--This is a comment-->
         <label for="type">Categoría del producto</label>
         <select name="type">
             <option value="salsa"></option>
@@ -30,5 +31,9 @@
             <option value="magokoro"></option>
         </select>
     </form>
+
+    <script src="./js/utils.js"></script>
+    <script type="module" src="./js/create-product.js"></script>
+
 </body>
 </html>
