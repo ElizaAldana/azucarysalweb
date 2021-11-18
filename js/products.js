@@ -1,6 +1,10 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
-const products = [
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/*const products = [
     {
         id: 1,
         name: "Salsa de Jalapeño",
@@ -105,8 +109,8 @@ const products = [
         type: "salsa",
 
     }
-];
+];*/
 
-products.forEach((product) => {
+products.forEach(async(product) => {
     await setDoc(doc(db, "products", `01289FB321A54F2${product.id}`), product);
 });

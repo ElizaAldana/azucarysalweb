@@ -53,6 +53,7 @@ const login = async (email, password) => {
         const { user } = await signInWithEmailAndPassword(auth, email, password);
         console.log(user);
         const userInfo = await getUserInfo(user.uid);
+        alert(`Bienvenido ${userInfo.name}`);
 
         if (userInfo.isAdmin) {
             window.location = "../create.html";

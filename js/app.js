@@ -1,18 +1,44 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
-import { getFirestore, collection, getDocs, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
 const db = getFirestore(app);
-
 let products = [];
+
+
+const getAllProducts = async() => {
+    const collectionRef = collection(db, "products");
+    const { docs } = await getDocs(collectionRef);
+    const firebaseProducts = docs.map((doc) => {
+        return {
+            ...doc.data(),
+            id: doc.id,
+        }
+    });
+    firebaseProducts.forEach(product => {
+        productTemplate(product);
+    });
+
+    products = firebaseProducts;
+};
+
+
+
+
 let userLogged = null;
 let cart = [];
 
 
+
 // Elementos que añadí a mi carrito
-const cart = [];
+const getMyCar = () => {
+    const car = localStorage.getItem("car");
+    return car ? JSON.parse(car) : [];
+};
+
+const car = getMyCar();
+
+//const cart = [];
 
 // Añadir cada producto a un elemento contenedor
 const productsSection = document.getElementById("products");
@@ -27,6 +53,7 @@ const productTemplate = (item) => {
 
     // Seteamos el atributo href con una url dinámica, donde le pasamos el id del producto
     product.setAttribute("href", `./product.html?id=${item.id}`);
+    product.setAttribute("target", `_blank`);
 
     // Lógica de nuestro tag, botón de Recomendado o Más vendido
     let tagHtml;
@@ -146,6 +173,6 @@ if (getFilteredProduct()) {
     });
 }
 
-
+getAllProducts();
 
 
