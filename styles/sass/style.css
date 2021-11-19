@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #59D9CC;
 }
 
 .auth.hidden {
@@ -639,5 +640,77 @@ body {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.create {
+  background-color: #59D9CC;
+  width: 100%;
+  padding-top: 15%;
+  padding-bottom: 10%;
+  margin: 0 auto;
+  color: #4A4A4A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.create__image {
+  margin: 0;
+  width: 60%;
+}
+
+#createProduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#createProduct h1 {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#createProduct input, #createProduct textarea {
+  background-color: #59D9CC;
+  margin: 5px;
+  font-size: 1.5em;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #4A4A4A;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#createProduct input[type=submit] {
+  font-size: 1.2em;
+  width: 40%;
+  background-color: #FF8741 !important;
+  color: #FFFFFF;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#createProduct label {
+  margin: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#createProduct select {
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-storage.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 
@@ -62,7 +62,6 @@ const createProduct = async () => {
                 description,
                 type,
                 isRecommended: false,
-                isBestSeller: false,
                 image: urlMainImage,
                 images: galleryImages,
             });

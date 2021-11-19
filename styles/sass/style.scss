@@ -1,3 +1,10 @@
+$black: #4A4A4A;
+$white: #FFFFFF;
+$pink: #EBAAAE;
+$blue: #59D9CC;
+$orange: #FF8741;
+$yellow: #FFE24A;
+
 * {
     padding: 0;
     box-sizing: border-box;
@@ -6,14 +13,8 @@
 
 body{
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: $blue;
 }
-
-$black: #4A4A4A;
-$white: #FFFFFF;
-$pink: #EBAAAE;
-$blue: #59D9CC;
-$orange: #FF8741;
-$yellow: #FFE24A;
 
 
 
@@ -557,4 +558,67 @@ $yellow: #FFE24A;
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.create {
+    background-color: $blue;
+    width: 100%;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    margin: 0 auto;
+    color: $black;
+    display:flex;
+
+    &__image {
+        margin: 0;
+        width: 60%;
+    }
+}
+
+#createProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+
+    h1 {
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    input, textarea {
+        background-color: $blue;
+        margin: 5px;
+        font-size: 1.5em;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #4A4A4A;
+        box-sizing: border-box;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+    }
+    & input[type = submit] {
+        font-size: 1.2em;
+        width: 40%;
+        background-color: $orange !important;
+        color: $white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+
+      }
+
+   
+     label {
+         margin: 5px;
+         font-size: 1.5em;
+         font-weight: bold;
+     }
+
+     select {
+         font-size: 1.5em;
+     }
+
 }

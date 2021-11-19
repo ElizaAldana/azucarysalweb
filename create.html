@@ -5,32 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/sass/style.css">
 </head>
 <body>
-    <form id="createProduct">
-        <h1>Añade un nuevo producto</h1>
-        <input type="text" name="name" placeholder="Nombre del producto">
-        <input type="number" name="price" placeholder="Precio del producto">
 
-        <textarea name="description"></textarea>
-
-        <div class="images">
-            <div class="images__input">
-                <label for="name">Fotografía principal</label>
-                <input type="file" accept="png,.jpg" name="image" id="mainImage">
-            </div>
-            <img src="" alt="" id="preview">
+    <!--LA BARRA DE NAV-->
+    <nav class="menu">
+        <div class="menu__borde">
+            <img src="./images/bordenav.png">
         </div>
+        <div class="menu__banner">
+            <a href="./index.html"><img src="./images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="./products.html">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="./products.html?type=salsa#productSection">Salsas</a></li>
+                        <li><a href="./products.html?type=isRecommended#productSection">Recomendados</a></li>
+                        <li><a href="./products.html?type=dulce#productSection">Repostería</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                <li class="menu__item"><a href="">COLABORACIONES</a></li>
+                <li class="menu__item"><a href="">CONTACTO</a></li>
+                <li class="menu__item"><a href="./login.html">INGRESAR</a></li>
+                <li class="menu__item"><a href=""><img src="./images/Buy.png" alt="carrito logo"></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
 
-        <!--This is a comment-->
-        <label for="type">Categoría del producto</label>
-        <select name="type">
-            <option value="salsa"></option>
-            <option value="dulce"></option>
-            <option value="magokoro"></option>
-        </select>
-    </form>
+    <div class="create">
+        <div class="create__image"><img src="./images/btse.jpeg" alt="BTS eating"></div>
+        <form id="createProduct">
+    
+            <h1>Añade un nuevo producto</h1>
+            <input type="text" name="name" placeholder="Nombre del producto">
+            <input type="number" name="price" placeholder="Precio del producto">
+            <textarea name="description" placeholder="Descripción del producto"></textarea>
+    
+            <div class="images">
+                <div class="images__input">
+                    <label for="name">Fotografía principal</label>
+                    <input type="file" accept=".jpg, .png" name="image" id="mainImage">
+                </div>
+                <img src="" alt="" id="preview">
+            </div>
+    
+            
+            <label for="type">Categoría del producto</label>
+            <select name="type">
+                <option value="salsa">Salsa</option>
+                <option value="dulce">Dulce</option>
+                <option value="magokoro">Magokoro</option>
+            </select>
+    
+            <div class="images">
+                <label for="gallery">Galería</label>
+                <input type="file" accept=".jpg,.png" multiple name="gallery">
+            </div>
+    
+            <input class="create__button" type="submit" value="Agregar producto" id="submitButton">
+            <p id="feedback"></p>
+        </form>
+    </div>
+    
+    <footer class="footer">
+        <figure class="footer__background">
+            <img src="./images/lastbg.png" alt="fondo">
+        </figure>
+        <form class="footer__banner">
+            <div class="footer__newsletter">
+                <h1>MANTENGAMOS EL CONTACTO:)</h1>
+                <div>
+                    <input type="email" placeholder="Escribe aquí tu e-mail">
+                    <input class="btn" type="submit" placeholder="" value="ENVIAR">
+                </div>
+                <div>
+                    <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                    <label class="footer__contact-text" for="option1">Acepto la recolección de mis datos de
+                        contacto</label>
+                </div>
+                <label class="footer__contact-text">© 2016 Azúcar y Sal Cali</label>
+            </div>
+            <ul class="footer__help">
+                <h3>AYUDA</h3>
+                <li class="footer__contact-text"><a href="">¿Algún problema?</a></li>
+                <li class="footer__contact-text"><a href="">Términos y condiciones</a></li>
+                <li class="footer__contact-text"><a href="">Política de privacidad</a></li>
+                <li class="footer__contact-text"><a href="">Servicio al cliente</a></li>
+            </ul>
+            <ul class="footer__contact">
+                <h3>CONTACTO</h3>
+                <li class="footer__contact-text">
+                    Ubicación:
+                    Cali, Valle del Cauca
+                    Colombia
+                </li>
+                <li class="footer__contact-text">
+                    Whatsapp:
+                    3137782524
+                </li>
+            </ul>
+        </form>
+    </footer>
 
     <script src="./js/utils.js"></script>
     <script type="module" src="./js/create-product.js"></script>
