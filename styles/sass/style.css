@@ -358,7 +358,7 @@ body {
   border-radius: 8px;
 }
 
-.product #gallery div {
+#gallery div {
   width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,7 +368,7 @@ body {
           align-items: center;
 }
 
-.product #gallery div img {
+#gallery div img {
   width: 100%;
 }
 

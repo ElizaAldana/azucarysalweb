@@ -266,6 +266,8 @@ body{
     background: $orange;
     border-radius: 21px;
 }
+
+
 .product{
     
     &__items{
@@ -333,18 +335,20 @@ body{
         border-radius: 8px;
     }
 
-    #gallery {
-        div {
-            width: 100px;
-            display: flex;
-            align-items: center;
+    
+    
+}
 
-            img {
-                width: 100%;
-            }
+#gallery {
+    div {
+        width: 100px;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 100%;
         }
     }
-    
 }
 
 .register {
