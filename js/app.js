@@ -1,9 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 let products = [];
+let userLogged = null;
+let car = [];
 
 
 const getAllProducts = async() => {
@@ -24,21 +28,27 @@ const getAllProducts = async() => {
 
 
 
-
-let userLogged = null;
-let cart = [];
-
-
-
 // Elementos que añadí a mi carrito
 const getMyCar = () => {
     const car = localStorage.getItem("car");
     return car ? JSON.parse(car) : [];
 };
 
-const car = getMyCar();
+const getFirebaseCar = async (userId) => {
+    const docRef = doc(db, "car", userId);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+    return data;
+}
 
-//const cart = [];
+const addProductsToCar = async (products) => {
+    await setDoc(doc(db,"car", userLogged.uid), {
+        products
+    });
+};
+
+//const car = getMyCar();
+//const firebaseCar = getFirebaseCar();
 
 // Añadir cada producto a un elemento contenedor
 const productsSection = document.getElementById("products");
@@ -66,7 +76,7 @@ const productTemplate = (item) => {
 
     // Lógica para saber si un producto ya fue añadido al carrito
     // para deshabilitar el botón.
-    const isAdded = cart.some(productCart => productCart.id === item.id);
+    const isAdded = car.some(productCart => productCart.id === item.id);
     let buttonHtml;
 
     if (isAdded) {
@@ -110,7 +120,11 @@ const productTemplate = (item) => {
             price: item.price
         };
 
-        cart.push(productAdded);
+        car.push(productAdded);
+        if (userLogged) {
+            addProductsToCar(car);
+        }
+        localStorage.setItem("car", JSON.stringify(car));
 
         // Deshabilito el botón
         productCartButton.setAttribute("disabled", true);
@@ -173,6 +187,19 @@ if (getFilteredProduct()) {
     });
 }
 
-getAllProducts();
 
 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const result = await getFirebaseCar(user.uid);
+        console.log(car);
+        car = result.products;
+        //car = result.products;
+        userLogged = user;
+    } else {
+        car = getMyCar();
+    }
+    
+    getAllProducts();
+    
+});

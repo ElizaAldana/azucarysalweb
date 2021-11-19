@@ -15,6 +15,11 @@ const db = getFirestore(app);
         desc: "Realmente la salsa de jalapeño es perfecta para acompañar comidas suaves, y para condimentar cualquier tipo de preparación salada en la que quieras un toque de picante. Viene en presentación de 120ml.",
         isRecommended: true,
         type: "salsa",
+        images: [
+            "./images/jalaham.jpg",
+            "./images/jalanacho.jpg",
+            "./images/jalapeno.jpg"
+        ]
     },
     {
         id: 2,
