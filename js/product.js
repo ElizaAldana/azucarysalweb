@@ -12,6 +12,7 @@ const getProduct = async () => {
     const docRef = doc(db, "products", productId);
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
+    console.log(data);
 
     productSection.classList.add("loaded");
     spinner.classList.add("loaded");
@@ -45,16 +46,16 @@ const loadProductInfo = (product) => {
     productImage.setAttribute("src", product.image);
 
     if (product.images) {
-        createGallery(product.images);
+        createGallery(product.image, product.images);
     }
 }
 
 
 
 //Se crea la galería
-const createGallery = (images) => {
+const createGallery = (image, images) => {
     const gallery = document.createElement("div");
-    gallery.innerHTML = `<img src="${product.image}">`;
+    gallery.innerHTML = `<img src="${image}">`;
 
     images.forEach(image => {
         gallery.innerHTML += `<img src="${image}">`;
@@ -62,7 +63,8 @@ const createGallery = (images) => {
 
     productGallery.appendChild(gallery);
 
-    const productGalleryImages = document.querySelector(".product__image > #gallery > div");
+    const productGalleryImages = document.querySelector(".product__images > #gallery");
+    console.log(productGalleryImages);
     productGalleryImages.addEventListener("click", e => {
 
         if (e.target.tagName === "IMG") {
@@ -70,6 +72,7 @@ const createGallery = (images) => {
             productImage.setAttribute("src", imageSource);
         }
     });
+
 };
 
 getProduct();
