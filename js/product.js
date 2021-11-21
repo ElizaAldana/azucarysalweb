@@ -1,9 +1,29 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 
+let userLogged = null;
+let car = [];
+
+
+//Firebase de cart
+const getFirebaseCar = async (userId) => {
+    const docRef = doc(db, "car", userId);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+    return data;
+}
+
+//Agregar producto al carro
+const addProductsToCar = async (products) => {
+    await setDoc(doc(db,"car", userLogged.uid), {
+        products
+    });
+};
 const getProduct = async () => {
     const url = window.location.search;
     const searchParams = new URLSearchParams(url);
@@ -75,4 +95,53 @@ const createGallery = (image, images) => {
 
 };
 
+// Busco el botón del carrito en el producto (.product__cart)
+const productCartButton = document.querySelector(".product__car");
+
+// Cuando haga click en el botón del carrito:
+productCartButton.addEventListener("click", async e => {
+
+    // Evita un comportamiento por defecto
+    // Dirigirme a otra página (enlace - a) && Refrescar la página (form)
+    e.preventDefault();
+
+    const url = window.location.search;
+    const searchParams = new URLSearchParams(url);
+    const productId = searchParams.get("id");
+
+    const docRef = doc(db, "products", productId);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+    console.log(data);
+
+    const productAdded = {
+        id: productId,
+        name: data.name,
+        image: data.image,
+        price: data.price
+    };
+
+    car.push(productAdded);
+    if (userLogged) {
+        addProductsToCar(car);
+    }
+    localStorage.setItem("car", JSON.stringify(car));
+
+    // Deshabilito el botón
+    productCartButton.setAttribute("disabled", true);
+});
+
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const result = await getFirebaseCar(user.uid);
+        console.log(car);
+        car = result.products;
+        userLogged = user;
+    } else {
+        car = getMyCar();
+    }
+    
+    
+});
 getProduct();

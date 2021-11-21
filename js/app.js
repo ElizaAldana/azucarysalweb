@@ -194,7 +194,6 @@ onAuthStateChanged(auth, async (user) => {
         const result = await getFirebaseCar(user.uid);
         console.log(car);
         car = result.products;
-        //car = result.products;
         userLogged = user;
     } else {
         car = getMyCar();
