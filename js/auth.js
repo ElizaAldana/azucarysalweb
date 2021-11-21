@@ -111,6 +111,7 @@ if (registerForm) {
                 address,
                 isAdmin: false,
             });
+            alert("Registrado con éxito :3")
         } else {
             alert();
         }

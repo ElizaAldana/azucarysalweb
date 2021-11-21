@@ -24,6 +24,7 @@ const addProductsToCar = async (products) => {
         products
     });
 };
+
 const getProduct = async () => {
     const url = window.location.search;
     const searchParams = new URLSearchParams(url);

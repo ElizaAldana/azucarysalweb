@@ -37,8 +37,10 @@ const getMyCar = () => {
 const getFirebaseCar = async (userId) => {
     const docRef = doc(db, "car", userId);
     const docSnap = await getDoc(docRef);
-    const data = docSnap.data();
-    return data;
+    //const data = docSnap.data();
+    return docSnap.exists() ? docSnap.data() : {
+        products: []
+    };
 }
 
 const addProductsToCar = async (products) => {
@@ -191,9 +193,12 @@ if (getFilteredProduct()) {
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
+
         const result = await getFirebaseCar(user.uid);
-        console.log(car);
+        console.log(user.uid);
         car = result.products;
+        console.log(result.products);
+        //car = result.products;
         userLogged = user;
     } else {
         car = getMyCar();

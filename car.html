@@ -5,11 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/sass/style.css">
 </head>
 <body>
+     <!--LA BARRA DE NAV-->
+     <nav class="menu">
+        <div class="menu__borde">
+            <img src="./images/bordenav.png">
+        </div>
+        <div class="menu__banner">
+            <a href="./index.html"><img src="./images/logo2.png" alt="logo"></a>
+            <ul class="menu__ul">
+                <li class="menu__item menu__list">
+                    <a href="./products.html">PRODUCTOS</a>
+                    <ul class="menu__drop">
+                        <li><a href="./products.html?type=salsa#productSection">Salsas</a></li>
+                        <li><a href="./products.html?type=isRecommended#productSection">Recomendados</a></li>
+                        <li><a href="./products.html?type=dulce#productSection">Repostería</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="">RESTAURANTE</a></li>
+                <li class="menu__item"><a href="./create.html">AGREGAR PRODUCTO</a></li>
+                <li class="menu__item"><a href="./login.html">INGRESAR</a></li>
+                <li class="menu__item"><a href="./car.html"><img src="./images/Buy.png" alt="carrito logo"></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
     <ul class="products" id="car"></ul>
     <h3 class="total" id="total"></h3>
+
+    <footer class="footer">
+        <figure class="footer__background">
+            <img src="./images/lastbg.png" alt="fondo">
+        </figure>
+        <form class="footer__banner">
+            <div class="footer__newsletter">
+                <h1>MANTENGAMOS EL CONTACTO:)</h1>
+                <div>
+                    <input type="email" placeholder="Escribe aquí tu e-mail">
+                    <input class="btn" type="submit" placeholder="" value="ENVIAR">
+                </div>
+                <div>
+                    <input class="btn" type="checkbox" name="options" value="yes" id="option1">
+                    <label class="footer__contact-text" for="option1">Acepto la recolección de mis datos de
+                        contacto</label>
+                </div>
+                <label class="footer__contact-text">© 2016 Azúcar y Sal Cali</label>
+            </div>
+            <ul class="footer__help">
+                <h3>AYUDA</h3>
+                <li class="footer__contact-text"><a href="">¿Algún problema?</a></li>
+                <li class="footer__contact-text"><a href="">Términos y condiciones</a></li>
+                <li class="footer__contact-text"><a href="">Política de privacidad</a></li>
+                <li class="footer__contact-text"><a href="">Servicio al cliente</a></li>
+            </ul>
+            <ul class="footer__contact">
+                <h3>CONTACTO</h3>
+                <li class="footer__contact-text">
+                    Ubicación:
+                    Cali, Valle del Cauca
+                    Colombia
+                </li>
+                <li class="footer__contact-text">
+                    Whatsapp:
+                    3137782524
+                </li>
+            </ul>
+        </form>
+    </footer>
+
 
     <script src="./js/utils.js"></script>
     <script type="module" src="./js/car.js"></script>
