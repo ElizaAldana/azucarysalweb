@@ -63,7 +63,7 @@ const loadProductInfo = (product) => {
     productName.innerText = product.name;
     productDescription.innerText = product.description;
     productDesc.innerText = product.desc;
-    productPrice.innerText = product.pricetag;
+    productPrice.innerText = product.price;
     productImage.setAttribute("src", product.image);
 
     if (product.images) {
@@ -119,7 +119,8 @@ productCartButton.addEventListener("click", async e => {
         id: productId,
         name: data.name,
         image: data.image,
-        price: data.price
+        price: data.price,
+        desc: data.desc,
     };
 
     car.push(productAdded);

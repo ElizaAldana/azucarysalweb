@@ -39,11 +39,12 @@ const createProduct = async () => {
     const name = createProductForm.name.value;
     const price = createProductForm.price.value;
     const description = createProductForm.description.value;
+    const desc = createProductForm.desc.value;
     const type = createProductForm.type.value;
     const mainImage = createProductForm.image.files[0];
     const gallery = createProductForm.gallery.files;
     
-    if (name && price && description && type && mainImage) {
+    if (name && price && description && desc && type && mainImage) {
         feedback.innerText = "Subiendo el producto...";
         try {
             
@@ -60,8 +61,8 @@ const createProduct = async () => {
                 name,
                 price,
                 description,
+                desc,
                 type,
-                isRecommended: false,
                 image: urlMainImage,
                 images: galleryImages,
             });

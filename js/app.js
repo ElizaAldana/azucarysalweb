@@ -198,7 +198,6 @@ onAuthStateChanged(auth, async (user) => {
         console.log(user.uid);
         car = result.products;
         console.log(result.products);
-        //car = result.products;
         userLogged = user;
     } else {
         car = getMyCar();
