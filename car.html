@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +12,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/sass/style.css">
 </head>
+
 <body>
-     <!--LA BARRA DE NAV-->
-     <nav class="menu">
+    <!--LA BARRA DE NAV-->
+    <nav class="menu">
         <div class="menu__borde">
             <img src="./images/bordenav.png">
         </div>
@@ -36,8 +38,27 @@
         </div>
         </div>
     </nav>
-    <ul class="products" id="car"></ul>
-    <h3 class="total" id="total"></h3>
+
+    <div class="checkout__section">
+        <section>
+            <ul class="products" id="car"></ul>
+            <h3 class="total" id="total"></h3>
+        </section>
+
+        <section>
+            <button id="autofill">Usar mismos datos del usuario</button>
+            <form id="checkout">
+                <input type="text" name="name" placeholder="Nombre completo">
+                <input type="text" name="city" placeholder="Cuidad">
+                <input type="text" name="address" placeholder="Dirección de residencia">
+                <select name="payment">
+                    <option value="contraentrega">Pago contra entrega</option>
+                    <option value="pse">PSE</option>
+                </select>
+                <input type="submit" value="Completar compra">
+            </form>
+        </section>
+    </div>
 
     <footer class="footer">
         <figure class="footer__background">
@@ -83,4 +104,5 @@
     <script src="./js/utils.js"></script>
     <script type="module" src="./js/car.js"></script>
 </body>
+
 </html>

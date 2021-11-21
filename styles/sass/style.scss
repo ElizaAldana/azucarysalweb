@@ -433,6 +433,8 @@ body{
 }
 
 .ingresar {
+    overflow: hidden;
+    max-width: 100vw;
     width: 100%;
     height: 60%;
     display: flex;
@@ -640,9 +642,11 @@ body{
 }
 
 .checkout__section {
+    padding-top: 20%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    color: $black;
 
     section {
         width: 50%;
@@ -652,11 +656,160 @@ body{
 
     form {
         input, select {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            background-color: $blue;
+            color: $black;
+            font-size: 1em;
             width: 100%;
             border: none;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #4A4A4A;
+            box-sizing: border-box;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        & input[type=submit]{
+            font-size: 1em;
+            background-color: $orange;
+            color: $white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+          }
+    }
+}
+
+@media all and (max-width: 895px) {
+
+    //products page
+    .menu {
+        &__item--car {
+            width: 60%;
+        }
+
+        &__ul {
+            margin-left: 35%;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            top: 30px;
+            z-index: 8;
+            align-content: center;
+        }
+       
+        &__item{
+            list-style: none;
+            padding-left: 0.5%;
+            padding-right: 0.5%;
+            & a{
+                position: relative;
+                text-decoration: none;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                font-style: normal;
+                font-size: 1.1em;
+                color: $blue;
+            }
+        
         }
     }
+
+    .swiper h1 {
+        text-align: center;
+        font-family: 'Anton', sans-serif;
+        font-size: 2em;
+        margin: 10%;
+        display: flex;
+        position: fixed;
+        color: #FFFFFF;
+        //text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 1em;
+        height: 477px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        padding-top: 1%;
+    }
+
+
+    .product{
+        display: flex;
+        width: 50%;
+        flex-wrap: wrap;
+        text-decoration: none;
+        position: relative;
+        display: flex;    
+        flex-direction: column;
+    }
+    
+
+    //login and register
+    .ingresar img {
+        width: 100%;
+
+    }
+    
+    #ingresar__form {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+    h1 {
+        font-size: 3.5em;
+    }
+    h3 {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        color: #4A4A4A;
+        font-size: 2.5em;
+        font-weight: 400;
+    }
+
+    .footer__contact-text {
+        margin-top: 2%;
+        list-style: none;
+        font-size: 1.5em;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight: 200;
+        color: #4A4A4A;
+    }
+   
+    .footer__background {
+        position: absolute;
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 108vmin;
+    }
+    .footer__banner {
+        padding: 10px;
+        position: relative;
+        margin: 20% 5% 5% 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
 }

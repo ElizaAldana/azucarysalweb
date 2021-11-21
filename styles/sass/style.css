@@ -468,6 +468,8 @@ body {
 }
 
 .ingresar {
+  overflow: hidden;
+  max-width: 100vw;
   width: 100%;
   height: 60%;
   display: -webkit-box;
@@ -729,6 +731,7 @@ body {
 }
 
 .checkout__section {
+  padding-top: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -738,6 +741,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #4A4A4A;
 }
 
 .checkout__section section {
@@ -748,10 +752,174 @@ body {
 }
 
 .checkout__section form input, .checkout__section form select {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #59D9CC;
+  color: #4A4A4A;
+  font-size: 1em;
   width: 100%;
   border: none;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #4A4A4A;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.checkout__section form input[type=submit] {
+  font-size: 1em;
+  background-color: #FF8741;
+  color: #FFFFFF;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+@media all and (max-width: 895px) {
+  .menu__item--car {
+    width: 60%;
+  }
+  .menu__ul {
+    margin-left: 35%;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    top: 30px;
+    z-index: 8;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .menu__item {
+    list-style: none;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+  }
+  .menu__item a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-style: normal;
+    font-size: 1.1em;
+    color: #59D9CC;
+  }
+  .swiper h1 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    margin: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    color: #FFFFFF;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 1em;
+    height: 477px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding-top: 1%;
+  }
+  .product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ingresar img {
+    width: 100%;
+  }
+  #ingresar__form {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  h3 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: #4A4A4A;
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+  .footer__contact-text {
+    margin-top: 2%;
+    list-style: none;
+    font-size: 1.5em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 200;
+    color: #4A4A4A;
+  }
+  .footer__background {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 108vmin;
+  }
+  .footer__banner {
+    padding: 10px;
+    position: relative;
+    margin: 20% 5% 5% 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 /*# sourceMappingURL=style.css.map */
