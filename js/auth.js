@@ -88,7 +88,7 @@ if (loginForm) {
 
         if (email && password) {
             login(email, password);
-            alert("Bienvenido c:")
+            //alert("Bienvenido c:")
         } else {
             console.log("Completa todos los datos");
         }
