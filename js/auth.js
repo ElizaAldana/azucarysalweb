@@ -48,9 +48,9 @@ const login = async (email, password) => {
         alert(`Bienvenido ${userInfo.name}`);
 
         if (userInfo.isAdmin) {
-            window.location = "../create.html";
+            window.location = "./create.html";
         } else {
-            window.location = "../products.html";
+            window.location = "./products.html";
         }
 
         console.log(`Bienvenido ${userInfo.name}`);
