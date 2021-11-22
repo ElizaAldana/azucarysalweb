@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
-import { getFirestore, collection, getDocs, doc, getDoc, setDoc} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -10,7 +10,7 @@ let userLogged = null;
 let car = [];
 
 
-const getAllProducts = async() => {
+const getAllProducts = async () => {
     const collectionRef = collection(db, "products");
     const { docs } = await getDocs(collectionRef);
     const firebaseProducts = docs.map((doc) => {
@@ -44,7 +44,7 @@ const getFirebaseCar = async (userId) => {
 }
 
 const addProductsToCar = async (products) => {
-    await setDoc(doc(db,"car", userLogged.uid), {
+    await setDoc(doc(db, "car", userLogged.uid), {
         products
     });
 };
@@ -71,7 +71,7 @@ const productTemplate = (item) => {
     let tagHtml;
     if (item.isRecommended) {
         tagHtml = `<span class="product__tag product__tag--recommended">Recomendado</span>`;
-    
+
     } else {
         tagHtml = "";
     }
@@ -149,10 +149,10 @@ const loadProducts = () => {
         filteredProductsByCategory = products;
     }
 
-    if (order === "asc"){
+    if (order === "asc") {
         filteredProductsByCategory = filteredProductsByCategory.sort((a, b) => a.price - b.price);
     }
-    if (order === "desc"){
+    if (order === "desc") {
         filteredProductsByCategory = filteredProductsByCategory.sort((a, b) => b.price - a.price);
     }
 
@@ -195,14 +195,12 @@ onAuthStateChanged(auth, async (user) => {
     if (user) {
 
         const result = await getFirebaseCar(user.uid);
-        console.log(user.uid);
         car = result.products;
-        console.log(result.products);
         userLogged = user;
     } else {
         car = getMyCar();
     }
-    
+
     getAllProducts();
-    
+
 });

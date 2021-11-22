@@ -43,11 +43,11 @@ const createProduct = async () => {
     const type = createProductForm.type.value;
     const mainImage = createProductForm.image.files[0];
     const gallery = createProductForm.gallery.files;
-    
+
     if (name && price && description && desc && type && mainImage) {
         feedback.innerText = "Subiendo el producto...";
         try {
-            
+
             const urlMainImage = await uploadMainImage(mainImage);
             let galleryImages = [];
 

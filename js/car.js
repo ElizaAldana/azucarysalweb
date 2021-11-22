@@ -31,7 +31,7 @@ const removeProduct = (productId) => {
 
 const getFirebaseCar = async (userId) => {
     const docRef = doc(db, "car", userId);
-    const docSnap = await getDoc (docRef);
+    const docSnap = await getDoc(docRef);
     return docSnap.exists() ? docSnap.data() : {
         product: []
     }
@@ -39,16 +39,16 @@ const getFirebaseCar = async (userId) => {
 
 const getUserInfo = async (userId) => {
     try {
-        const docRef =doc(db, "users", userId);
+        const docRef = doc(db, "users", userId);
         const docSnap = await getDoc(docRef);
         return docSnap.data();
-        }catch (e) {
-            console.log(e);
-        }
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 const renderProduct = (product => {
-    
+
     const newProduct = document.createElement("li");
     newProduct.className = "product product--car";
     newProduct.innerHTML = `
@@ -62,8 +62,8 @@ const renderProduct = (product => {
 
     carSelection.appendChild(newProduct);
 
-    newProduct.addEventListener("click", e=>{
-        if(e.target.tagName === "BUTTON"){
+    newProduct.addEventListener("click", e => {
+        if (e.target.tagName === "BUTTON") {
             removeProduct(product.id);
         }
     });
@@ -72,7 +72,7 @@ const renderProduct = (product => {
 const renderMyCar = (car) => {
     carSelection.innerHTML = "";
     let total = 0;
-   
+
     car.forEach(product => {
         total += product.price;
         renderProduct(product);
@@ -82,19 +82,18 @@ const renderMyCar = (car) => {
 };
 
 const deleteCar = async () => {
-    try{
+    try {
         await deleteDoc(doc(db, "car", userLogged.uid));
         renderMyCar([]);
-        console.log("Carrito actualizado")
     } catch (e) {
         console.log(e);
-}
+    }
 };
 
 
 const createOrder = async (userFields) => {
     try {
-        const order = await addDoc(collection(db, "orders"),{
+        const order = await addDoc(collection(db, "orders"), {
             ...userFields,
             products: car,
             total,
@@ -130,14 +129,14 @@ checkoutForm.addEventListener("submit", e => {
     if (car.length) {
         if (name && city && address) {
             createOrder(userFields);
-        }else{
+        } else {
             alert("Completa los campos D:");
         }
-        }else{
-            alert("Selecciona algún producto");
-        }
+    } else {
+        alert("Selecciona algún producto");
+    }
 });
-    
+
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
@@ -150,9 +149,8 @@ onAuthStateChanged(auth, async (user) => {
             ...user,
             ...userInfo
         };
-        console.log(userLogged);
-    }else{
-        car=getMyCar();
+    } else {
+        car = getMyCar();
         renderMyCar(car);
     }
 });

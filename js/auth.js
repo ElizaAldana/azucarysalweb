@@ -35,7 +35,7 @@ const getUserInfo = async(userId) => {
         const docSnap = await getDoc(docRef);
         return docSnap.data();
     } catch (e) {
-
+        console.log(e);
     }
     
 }
@@ -43,7 +43,6 @@ const getUserInfo = async(userId) => {
 const login = async (email, password) => {
     try {
         const { user } = await signInWithEmailAndPassword(auth, email, password);
-        console.log(user);
         const userInfo = await getUserInfo(user.uid);
         alert(`Bienvenido ${userInfo.name}`);
 
@@ -53,9 +52,7 @@ const login = async (email, password) => {
             window.location = "./products.html";
         }
 
-        console.log(`Bienvenido ${userInfo.name}`);
     } catch (e) {
-        console.log(e);
         if(e.code === "auth/user-not-found"){
             alert("Este usuario no está registrado");
         }
@@ -90,7 +87,7 @@ if (loginForm) {
             login(email, password);
             //alert("Bienvenido c:")
         } else {
-            console.log("Completa todos los datos");
+            alert("Completa todos los datos");
         }
     });
 }
@@ -120,12 +117,4 @@ if (registerForm) {
 }
 
 
-onAuthStateChanged(auth, (user) => {
-    // if (user) {
-    //     loginForm.classList.add("hidden");
-    //     logOutButton.classList.add("visible");
-    // } else {
-    //     loginForm.classList.remove("hidden");
-    //     logOutButton.classList.remove("visible");
-    // }
-  });
+onAuthStateChanged(auth, (user) => {});

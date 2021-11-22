@@ -20,7 +20,7 @@ const getFirebaseCar = async (userId) => {
 
 //Agregar producto al carro
 const addProductsToCar = async (products) => {
-    await setDoc(doc(db,"car", userLogged.uid), {
+    await setDoc(doc(db, "car", userLogged.uid), {
         products
     });
 };
@@ -33,8 +33,6 @@ const getProduct = async () => {
     const docRef = doc(db, "products", productId);
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
-    console.log(data);
-
     productSection.classList.add("loaded");
     spinner.classList.add("loaded");
 
@@ -47,7 +45,6 @@ const url = window.location.search;
 const searchParams = new URLSearchParams(url);
 
 const productId = searchParams.get("id");
-//const product = products.find(product => product.id == productId);
 
 //const
 const productSection = document.getElementById("product");
@@ -85,7 +82,6 @@ const createGallery = (image, images) => {
     productGallery.appendChild(gallery);
 
     const productGalleryImages = document.querySelector(".product__images > #gallery");
-    console.log(productGalleryImages);
     productGalleryImages.addEventListener("click", e => {
 
         if (e.target.tagName === "IMG") {
@@ -113,7 +109,6 @@ productCartButton.addEventListener("click", async e => {
     const docRef = doc(db, "products", productId);
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
-    console.log(data);
 
     const productAdded = {
         id: productId,
@@ -137,13 +132,12 @@ productCartButton.addEventListener("click", async e => {
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         const result = await getFirebaseCar(user.uid);
-        console.log(car);
         car = result.products;
         userLogged = user;
     } else {
         car = getMyCar();
     }
-    
-    
+
+
 });
 getProduct();
